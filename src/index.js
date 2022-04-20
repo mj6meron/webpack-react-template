@@ -10,5 +10,5 @@ ReactDOM.render(<App/>, document.getElementById("index"));
 
 
 /*
-npm i -D @babel/core @babel/present-env @babel/preset-react babel-loader html-webpack-plugin webpack webpack-cli webpack-dev-server
+npm i -D @babel/core @babel/present-env @babel/preset-react babel-loader html-webpack-plugin webpack webpack-cli webpack-dev-server npm i -D @babel/core @babel/present-env @babel/preset-react babel-loader html-webpack-plugin webpack webpack-cli webpack-dev-server mini-css-extract-plugin
 */
