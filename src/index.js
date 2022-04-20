@@ -1,13 +1,11 @@
 import React from "react"; 
 import ReactDOM from "react-dom"; 
+import App from './components/App'
+import './global.css'
+
+
  
-function Welcome(props) { 
-  return (<h1>Hello, {props.name}</h1>)
-} 
- 
-const element = <Welcome name="Meron" />; 
- 
-ReactDOM.render(element, document.getElementById("index")); 
+ReactDOM.render(<App/>, document.getElementById("index")); 
 
 
 
