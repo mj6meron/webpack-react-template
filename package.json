@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "dev": "nodemon ./backEnd/server.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,8 @@
     "express": "^4.17.3",
     "mongoose": "^6.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "signale": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
