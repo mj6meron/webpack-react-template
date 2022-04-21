@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin"); 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const path = require('path')
  
 const htmlPlugin = new HtmlWebPackPlugin({ 
   template: "./src/index.html", 
@@ -32,6 +33,18 @@ module.exports = {
         exclude: /node_modules/
       }
     ] 
+  },
+  devServer: {
+    proxy: { // proxy URLs to backend development server
+      '/': 'http://localhost:1337/',
+      secure: false, // had an expression which was resolving to true
+    },
+    static: path.join(__dirname, 'dist'), // boolean | string | array | object, static file location
+    compress: true, // enable gzip compression
+    historyApiFallback: true, // true for index.html upon 404, object for multiple paths
+    hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
+    https: false, // true for self-signed, object for cert authority
+    // ...
   }, plugins: [ 
     new HtmlWebPackPlugin({ 
     template: "./src/index.html", 
@@ -39,3 +52,5 @@ module.exports = {
   }), new MiniCssExtractPlugin()
 ] 
 };
+
+//----------------------------------------------------------------------------------------------------------------
