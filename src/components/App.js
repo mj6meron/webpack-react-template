@@ -22,16 +22,46 @@ export default function App() {
     })
   })
 
+// Courses       --->     course_code     course_name            course_description
+// Registrations --->     student_id        courser_code        unit_timestamp  
+// Student       --->      unit_id     fullname     email      password                                    
 
   const generateRows =()=>{
 
-    return (
-      <div>
-        here we have the list
-      </div>
-    )
+    let rows = []
 
+    backEndData[0].forEach(student=>{
+      let stuRowDetails = []
+      stuRowDetails.push(student.unit_id)
+      stuRowDetails.push(student.fullname)
+  
+      
+
+      // REGISTRATIONS [2]
+      let courseCode = backEndData[2].filter(x=>student.unit_id==x.student_id).map(
+        registrationStu=>{
+          stuRowDetails.push(registrationStu.unit_timestamp)
+          return registrationStu.courser_code
+        }
+      )
+
+      // Courses [1]
+      let CourseName = backEndData[1].filter(korse=>korse.course_code==courseCode).map(ix=>{
+        return ix.course_name
+      })
+      stuRowDetails.push(CourseName)
+      rows.push(stuRowDetails)
+    })
+    return (
+      rows.map(eachrow=>{
+
+      })
+    )
   }
+
+ setTimeout(()=>{
+  console.log(generateRows())
+ }, 2000)
 
 
   console.log('here we have all data ->', backEndData)
