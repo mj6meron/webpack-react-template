@@ -8,10 +8,10 @@ router.get('/students', (req, res) => {
     console.log('we get a get request for students')
     Student.find({}, function(err, users) {
         var studentsList = [];
-        users.forEach( async (user) =>{
+        users.forEach((user) =>{
           studentsList.push(user);
         })
-        res.send(studentsList);  
+        res.json(studentsList);  
       })
 })
 
@@ -19,10 +19,10 @@ router.get('/registrations', (req, res) => {
     console.log('we get a get request for registrations')
     Registration.find({}, function(err, users) {
         var registrationList = [];
-        users.forEach( async (user) =>{
+        users.forEach((user) =>{
           registrationList.push(user);
         })
-        res.send(registrationList);  
+        res.json(registrationList);  
       })
 })
 
@@ -30,10 +30,10 @@ router.get('/courses', (req, res) => {
     console.log('we get a get request for courses')
     Course.find({}, function(err, users) {
         var courseList = [];
-        users.forEach( async (user) =>{
+        users.forEach((user) =>{
           courseList.push(user);
         })
-        res.send(courseList);  
+        res.json(courseList);  
       })
 })
 
