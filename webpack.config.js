@@ -36,8 +36,10 @@ module.exports = {
   },
   devServer: {
     proxy: { // proxy URLs to backend development server
-      '/': 'http://localhost:1337/',
-      secure: false, // had an expression which was resolving to true
+      '/*': 'http://localhost:1337/',
+      "secure": false, // had an expression which was resolving to true
+    "logLevel": "debug",
+    "changeOrigin": true
     },
     static: path.join(__dirname, 'dist'), // boolean | string | array | object, static file location
     compress: true, // enable gzip compression
