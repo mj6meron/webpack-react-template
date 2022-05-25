@@ -1,7 +1,7 @@
  // This module is totally unUSED -
  
  
- exports.getRows =()=>{
+ export function  getRows(){
   let backEndData = {}; // array of lists - [students, courses, registrations ]
   fetch('/api/rows', {
     method: 'GET',
@@ -11,7 +11,7 @@
 return backEndData
 }
 
-exports.getStudents =()=>{
+export function getStudents(){
     let backEndData = {}; // array of lists - [students, courses, registrations ]
     fetch('/api/students', {
       method: 'GET',
@@ -22,20 +22,20 @@ exports.getStudents =()=>{
   return backEndData
   }
 
-exports.getCourses =()=>{
+export function getCourses(){
     fetch('/api/courses', {
       method: 'GET',
     }).then(result => result.json()).then(data => {
         return data
     })}
 
-exports.getRegistrations =()=>{
+export function getRegistrations(){
     fetch('/api/registrations', {
       method: 'GET',
     }).then(result => result.json()).then(data => {
         return data
     })}
 
-exports.users =(req, res)=>{
+export function users(req, res){
     res.json({ message: 'Now you are looking for users' });
   }

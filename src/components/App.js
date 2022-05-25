@@ -13,41 +13,29 @@ export default function App() {
       setRows(data.allrows)
       console.log("here is rows response ", data.allrows)
     })
-  }, []);
-
-  useEffect(() => {
-    console.log('her we have changed rows')
-    return () => {
-    };
-  }, [rows]);
-
+  }, [])
 
   const sortBy_stuId = ()=>{
     console.log('sortBy_stuId is clicked')
-    let mylist = rows
-    mylist.sort(function(a,b){return a[0].localeCompare(b[0]);})
-    console.log('mylist', mylist)
-    setRows(mylist)
+    let i = [...rows].sort(function(a,b){return a[0].localeCompare(b[0]);})
+    setRows(i)
   } 
 
   const sortBy_stuName = ()=>{
     console.log('sortBy_stuName is clicked')
-    let mylist = rows
-    mylist.sort(function(a,b){return a[1].localeCompare(b[1]);})
-    console.log('mylist', mylist)
+    let mylist = [...rows].sort(function(a,b){return a[1].localeCompare(b[1]);})
+    setRows(mylist)
   }
 
   const sortBy_courseName = ()=>{
-    let mylist = rows
-    mylist.sort(function(a,b){return a[3].localeCompare(b[3]);})
-    console.log('mylist', mylist)
+    let mylist = [...rows].sort(function(a,b){return a[3].localeCompare(b[3]);})
+    setRows(mylist)
   }
 
   const sortBy_regDate = ()=>{
     console.log('sortBy_regDate is clicked')
-    let mylist = rows
-    mylist.sort(function(a,b){return a[2].localeCompare(b[2]);})
-    console.log('mylist', mylist)
+    let mylist = [...rows].sort(function(a,b){return a[2].localeCompare(b[2]);})
+    setRows(mylist)
   }  
 
   console.log('rowsss',rows)
@@ -75,5 +63,3 @@ export default function App() {
     </div>
  )   
 }
-
-

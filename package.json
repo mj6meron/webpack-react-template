@@ -2,6 +2,7 @@
   "name": "webpack-react",
   "version": "1.0.0",
   "description": "",
+  "proxy": "http://localhost:1337",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
